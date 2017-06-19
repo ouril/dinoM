@@ -1,6 +1,38 @@
-
-{% extends "base.html" %}
 {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link href= "{% static 'stylesheet.min.css' %}" rel='stylesheet' type='text/css'>
+<title>
+    {% block title %}
+    Mydino
+    {% endblock %}
+</title>
+</head>
+<body>
+<nav>
+<ul>
+<li id='homelink'>
+<a class='home' href='/'>&#9749</a>
+</li>
+<li>
+<a href='/'>Новости</a>
+</li>
+<li>
+<a href='/'>Энциклопедия</a>
+</li>
+<li>
+<a href='/'>Библиотека</a>
+</li>
+</ul>
+</nav>
+<header>
+<h1>
+ДИНОМАНИЯ
+</h1>
+<div class='topic'></div>
+</header>
 {% block main %}
 <div class='line'>
 О ПРОЕКТЕ
@@ -20,7 +52,7 @@
 <div class='text'>Портал создан для того чтобы можно было проще найти научную, современную информацию о динозаврах</div>
 </div>
 <div class='blocks'>
-<img src='imgn/kentrosaurus.svg'>
+<img src="{% static 'imgn/kentrosaurus.svg'%}">
 <div class='text'>Портал создан для того чтобы можно было проще найти научную, современную информацию о динозаврах</div>
 <div class='empty'></div>
 </div>
@@ -45,3 +77,6 @@
 </div>
 <div class='free_pl'></div>
 {% endblock %}
+<footer></footer>
+</body>
+</html>
