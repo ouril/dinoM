@@ -9,6 +9,11 @@
     Mydino
     {% endblock %}
 </title>
+<style>
+   body {
+    background-image: url('{% static "imgn/dino.jpg" %}'); /* Путь к фоновому изображению */
+   }
+  </style>
 </head>
 <body>
 <nav>
@@ -17,10 +22,10 @@
 <a class='home' href='/'>&#9749</a>
 </li>
 <li>
-<a href='/'>Новости</a>
+<a href='{% url 'main' %}'>Главная</a>
 </li>
-<li>
-<a href='/'>Энциклопедия</a>
+<li>/
+<a href='{% url 'news' %}'>Новости</a>
 </li>
 <li>
 <a href='/'>Библиотека</a>

@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="827185f7-b10e-4b01-85c5-6ef809c53bf7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/news.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/stylesheet.min.css" afterPath="$PROJECT_DIR$/static/stylesheet.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/stylesheet.sass" afterPath="$PROJECT_DIR$/static/css/stylesheet.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dino/settings.py" afterPath="$PROJECT_DIR$/dino/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dino/urls.py" afterPath="$PROJECT_DIR$/dino/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dinomania/__init__.py" afterPath="$PROJECT_DIR$/dinomania/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dinomania/admin.py" afterPath="$PROJECT_DIR$/dinomania/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dinomania/apps.py" afterPath="$PROJECT_DIR$/dinomania/apps.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dinomania/models.py" afterPath="$PROJECT_DIR$/dinomania/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dinomania/tests.py" afterPath="$PROJECT_DIR$/dinomania/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dinomania/views.py" afterPath="$PROJECT_DIR$/dinomania/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-    </list>
+    <list default="true" id="827185f7-b10e-4b01-85c5-6ef809c53bf7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -336,7 +322,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2579666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
