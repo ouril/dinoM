@@ -9,11 +9,15 @@
     Mydino
     {% endblock %}
 </title>
+{% block fone %}
 <style>
+
    body {
+
     background-image: url('{% static "imgn/dino.jpg" %}'); /* Путь к фоновому изображению */
    }
   </style>
+{% endblock %}
 </head>
 <body>
 <nav>
@@ -32,12 +36,16 @@
 </li>
 </ul>
 </nav>
+{% block head %}
 <header>
 <h1>
 ДИНОМАНИЯ
 </h1>
-<div class='topic'></div>
+<div class='topic'>
+{% include "inc_login_form.html" %}
+</div>
 </header>
+{% endblock %}
 {% block main %}
 <div class='line'>
 О ПРОЕКТЕ

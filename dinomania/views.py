@@ -4,7 +4,8 @@ from dinomania.models import New, Dino
 # Create your views here.
 
 def main(request):
-    return  render(request, 'index.html')
+    news =  New.objects.all()
+    return  render(request, 'index.html', {'news': news})
 
 def news(request):
     page = 'news'

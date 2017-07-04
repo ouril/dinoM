@@ -29,19 +29,19 @@
 <div class='line'>
 НОВЕЙШАЯ НОВОСТЬ
 </div>
+{% for new in news %}
 <div class='news'>
 <div class='new_link'>
-<img src='imgn/sand.jpg'>
-<div class='text'>Портал создан для того чтобы можно было проще найти научную, современную информацию о динозаврах</div>
+
+<img src='{{ new.img.url }}' width="200">
+<div class='cont'>
+<div class='headi'>{{ new.name }}
 </div>
-<div class='new_link'>
-<img src='imgn/sand.jpg'>
-<div class='text'>Портал создан для того чтобы можно было проще найти научную, современную информацию о динозаврах</div>
-</div>
-<div class='new_link'>
-<img src='imgn/sand.jpg'>
-<div class='text'>Портал создан для того чтобы можно было проще найти научную, современную информацию о динозаврах</div>
+<div class='text'>какой то там текст о том как димозавры охраняли потомство и чтото типа того...
 </div>
 </div>
+</div>
+</div>
+{% endfor %}
 <div class='free_pl'></div>
 {% endblock %}

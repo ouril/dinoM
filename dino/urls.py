@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from dinomania.views import main, news
+from usermanagmentapp.views import login, logout
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,6 +25,12 @@ urlpatterns = [
     url(r'^$', main, name='main'),
     url(r'^news$', news, name='news')
 ]
+
+urlpatterns += [
+    url(r'^user/login/$', login),
+    url(r'^user/logout/$', logout)
+]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
