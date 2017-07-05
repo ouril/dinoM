@@ -163,4 +163,14 @@ input {
 footer {
   height: 300px; }
 
-/*# sourceMappingURL=stylesheet.min.css.map */
+  .cross {
+    text-align-last: right;
+    font-size: 15px
+
+  }
+  #regb {
+    background-color: #0754ad;
+    font-family: Arial, sans-serif;
+    color: #cacbc4;
+
+    font-weight: bold;/*# sourceMappingURL=stylesheet.min.css.map */
