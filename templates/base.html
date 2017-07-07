@@ -42,6 +42,8 @@
 
 </ul>
 </nav>
+{% block reg %}
+{% endblock %}
 {% block head %}
 <header>
 <h1>
@@ -51,7 +53,12 @@
 <div class="cross">X</div>
 {% include "inc_login_form.html" %}
 </div>
+
 </header>
+<div class='topic'>
+<div class="cross">X</div>
+{% include "inc_login_form.html" %}
+</div>
 {% endblock %}
 {% block main %}
 <div class='line'>

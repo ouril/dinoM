@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from dinomania.views import main, news
-from usermanagmentapp.views import login, logout
+from usermanagmentapp.views import login, logout, regis
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,7 +28,8 @@ urlpatterns = [
 
 urlpatterns += [
     url(r'^user/login/$', login),
-    url(r'^user/logout/$', logout)
+    url(r'^user/logout/$', logout),
+    url(r'^user/registration/$', regis)
 ]
 
 

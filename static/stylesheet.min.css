@@ -54,16 +54,16 @@ header {
     font-size: 75px;
     color: white;
     text-shadow: 5px; }
-  header .topic {
-    margin: 10px;
-    float: right;
-    top: 50px;
-    left: 360px;
-    width: 300px;
-    height: 200px;
-    color: white;
-    background-color: #cc5d2e;
-    opacity: 0.9; }
+.topic {
+  position: absolute;
+  margin: 10px;
+  float: right;
+  top: 30px;
+  left: 1040px;
+  width: 300px;
+  color: white;
+  background-color: #cc5d2e;
+  opacity: 0.9; }
 
 .contaner {
   display: flex;
@@ -174,3 +174,14 @@ footer {
     color: #cacbc4;
 
     font-weight: bold;/*# sourceMappingURL=stylesheet.min.css.map */
+  }
+  #regitr {
+    margin: 15px;
+    
+    padding: 3px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    color: #cacbc4;
+
+    font-weight: bold;/*# sourceMappingURL=stylesheet.min.css.map */
+  }
