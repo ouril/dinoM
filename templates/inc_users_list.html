@@ -1,0 +1,10 @@
+{% for user in users %}
+    <div class='blocks'>{{ user }}
+        <button id="regb">
+            Редактировать
+        </button>
+        <a href="delete/user/{{ user.id }}" id="regitr" >
+            Удалить
+        </a>
+    </div>
+{% endfor %}

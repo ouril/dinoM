@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link href= "{% static 'stylesheet.min.css' %}" rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+
+<title>
+
+    Mydino
+  
+</title>
+
+
+
+</head>
+<body>
+<nav>
+<ul>
+<li id='homelink'>
+<a class='home' href='/'>&#9749</a>
+</li>
+<li>
+<a href='{% url 'main' %}'>Главная</a>
+</li>
+<li>/
+<a href='{% url 'news' %}'>Новости</a>
+</li>
+<li>
+<a href='/'>Библиотека</a>
+</li>
+<li>
+<button class="reg" id='regb' type='submit'>регистрация</button>
+</li>
+
+</ul>
+</nav>
+
+<div class='line'>
+ADMIN PAGE
+</div>
+
+{% block admin %}
+
+<div class='contaner'>
+<div class='blocks'>
+<div class='text'>
+
+</div>
+</div>
+
+
+{% endblock %}
+
+<footer></footer>
+<script src="{% static 'myscript.js' %}"></script>
+</body>
+</html>
