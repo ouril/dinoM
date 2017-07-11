@@ -3,16 +3,16 @@
 {% load staticfiles %}
 {% block admin %}
 
-<div class='text'>
+<div id='user_id' class='text'>
 
 {% include 'inc_users_list.html' %}
 
 
-<form method="post" role="form" action="/user/registration/">
+<form  id='user_form' method="post" role="form" action="/user/registration/">
             {% include 'inc_regform.html' %}
-    <input type="submit" value="Create the account">
-</form>
 
+</form>
+<input type="submit" value="Edit account" onclick="send_data()">
 </div>
 
 {% endblock %}

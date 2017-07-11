@@ -1,6 +1,6 @@
 {% for user in users %}
     <div class='blocks'>{{ user }}
-        <button id="regb">
+        <button id="regb" onclick= "fill_form({{ user.id }})">
             Редактировать
         </button>
         <a href="delete/user/{{ user.id }}" id="regitr" >

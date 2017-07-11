@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from dinomania.views import main, news
 from usermanagmentapp.views import login, logout, regis
-from adminApp.views import madmin_page, delete_user
+from adminApp.views import madmin_page, delete_user, get_user_form, create_user
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -32,7 +32,9 @@ urlpatterns += [
     url(r'^user/logout/$', logout),
     url(r'^user/registration/$', regis),
     url(r'^madmin/$', madmin_page),
-    url(r'^madmin/delete/user/(\d+)$', delete_user)
+    url(r'^madmin/delete/user/(\d+)$', delete_user),
+    url(r'^madmin/get_user_form/(\d+)$', get_user_form),
+    url(r'^madmin/create/user/(\d*)$', create_user)
 ]
 
 
