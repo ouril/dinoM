@@ -7,13 +7,17 @@
 
 {% include 'inc_users_list.html' %}
 
-
+</div>
 <form  id='user_form' method="post" role="form" action="/user/registration/">
             {% include 'inc_regform.html' %}
 
 </form>
-<input type="submit" value="Edit account" onclick="send_data()">
-</div>
+<button id="regb" onclick="send_data()">Жми!</button>
 
+<script>
+    function go(){
+    console.log('&&&');
+};
+</script>
 {% endblock %}
 

@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import user_passes_test
 from django.http import Http404, JsonResponse
 from django.template import loader
 from django.template.context_processors import csrf
+from django.contrib import auth
+from django.shortcuts import render, HttpResponseRedirect
 
 # доступ у админке только суперпользователю
 # @user_passes_test(lambda u: u.is_superuser)
@@ -43,15 +45,18 @@ def create_user(request, user_id=None):
     Создает Пользователя(User)
     Или редактирует существующего, если указан  user_id
     """
-    if request.is_ajax():
-        
-        if not user_id:
-           
-            user = User(request.POST)
+    if request.is_ajax():  
+        print('user_id = ', user_id)
+        print("good")      
+        if not user_id:   
+            print("good")      
+            user = RegForm(request.POST)
         else:
+            print("good for change") 
             user = get_object_or_404(User, id=user_id)
             user = UserChangeForm(request.POST or None, instance=user)
         if user.is_valid():
+            print("good validation")
             user.save()
             users = User.objects.all()
             html = loader.render_to_string('inc_users_list.html', {'users': users}, request=request)
