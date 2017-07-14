@@ -1,12 +1,16 @@
 from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
-from django.contrib.auth.models import User
-from usermanagmentapp.forms import RegForm, UserChangeForm
 from django.contrib.auth.decorators import user_passes_test
 from django.http import Http404, JsonResponse
 from django.template import loader
 from django.template.context_processors import csrf
 from django.contrib import auth
 from django.shortcuts import render, HttpResponseRedirect
+
+from django.contrib.auth.models import User
+from usermanagmentapp.forms import RegForm, UserChangeForm
+from dinomania.forms import NewsForm, DinoForm, BookForm, AutorForm, ResursForm
+from dinomania.models import New, Dino
+
 
 # доступ у админке только суперпользователю
 # @user_passes_test(lambda u: u.is_superuser)
@@ -67,3 +71,8 @@ def create_user(request, user_id=None):
             return JsonResponse({'errors': errors})
 
     raise Http404
+
+def admin_dino(request):
+    dino = Dino.objects.all()
+    dino_form = DinoForm()
+    return render(request, 'admin_page.html', {'users': dino, 'form': dino_form})
