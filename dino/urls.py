@@ -13,39 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from dinomania.views import main, news
-from usermanagmentapp.views import login, logout, regis
-from adminApp.views import madmin_page, delete_user, get_user_form, create_user, admin_dino
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', main, name='main'),
-    url(r'^news$', news, name='news')
-]
-
-urlpatterns += [
-    url(r'^user/login/$', login),
-    url(r'^user/logout/$', logout),
-    url(r'^user/registration/$', regis)
-]
-
-urlpatterns += [
-    url(r'^madmin/$', madmin_page),
-    url(r'^madmin/delete/user/(\d+)$', delete_user),
-    url(r'^madmin/get_user_form/(\d+)$', get_user_form),
-    url(r'^madmin/create/user/(\d*)$', create_user)
-]
-
-urlpatterns += [
-    url(r'madmin/dino/', admin_dino),
-    #url(r'^madmin/create/dino$', dino_gems_create),
-    #url(r'^madmin/delete/dino/(\d+)$', admin_dino_delete),
-    #url(r'^madmin/update/dino/(\d+)$', admin_dino_update),
-    #url(r'^madmin/detail/dino/(\d+)$', admin_dino_detail)
+    url(r'^', include('dinomania.urls')),
+    url(r'^user/', include('usermanagmentapp.urls')),
+    url(r'^madmin/', include('adminApp.urls'))
 ]
 
 if settings.DEBUG:

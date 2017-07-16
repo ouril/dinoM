@@ -3,9 +3,11 @@
 {% block title %}
 News
 {% endblock %}
-
+{% block head %}
+<div class='free_pl'></div>
+{% endblock %}
 {% block main %}
-{% for new in news %}
+{% for new in object_list %}
 <div class='news'>
 <div class='new_link'>
 <img src='{{ new.img.url }}' width="200">

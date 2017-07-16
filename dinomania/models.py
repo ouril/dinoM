@@ -9,7 +9,8 @@ class New(models.Model):
     dino = models.ForeignKey('Dino', null=True)
     time = models.DateTimeField(auto_now_add=True, verbose_name='дата и время', null=True)
     body = models.TextField(blank=True)
-    img = models.ImageField(upload_to='test', blank=True)
+    img = models.ImageField(upload_to='test', blank=True, null=True)
+    i = 'news'
 
  
 class Dino(models.Model):
@@ -17,7 +18,7 @@ class Dino(models.Model):
     info = models.URLField(verbose_name='Статья', blank=True)
     about = models.TextField(blank=True)
     foto = models.ImageField(upload_to='test', blank=True)
-
+    i = 'dino'
     def __str__(self):
         return self.name
 
