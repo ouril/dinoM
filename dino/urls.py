@@ -17,13 +17,28 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from adminApp.views import madmin_page, delete_user, get_user_form, create_user, \
+    News_admin, New_del, NewsUpdateView, \
+    NewsCreateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('dinomania.urls')),
-    url(r'^user/', include('usermanagmentapp.urls')),
-    url(r'^madmin/', include('adminApp.urls'))
+    url(r'^user/', include('usermanagmentapp.urls'))
+
 ]
+
+urlpatterns += {
+    url(r'^madmin/$', madmin_page, name='mad'),
+    url(r'^madmin/delete/user/(\d+)$', delete_user),
+    url(r'^madmin/get_user_form/(\d+)$', get_user_form),
+    url(r'^madmin/create/user/(\d*)$', create_user),
+    url(r'^madmin/news/', News_admin.as_view(), name='news'),
+    url(r'^madmin/create/news$', NewsCreateView.as_view(), name='create'),
+    url(r'^madmin/delete/news/(?P<pk>\d+)$', New_del.as_view(), name='delete'),
+    url(r'^madmin/update/news/(?P<pk>\d+)$', NewsUpdateView.as_view(), name='update')
+}
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,7 +1,6 @@
 {% for obj in object_list %}
-    <div class='blocks'>{{ obj.name }}>
-        <a href="">{{obj.name}}</a>
-        <a href="{% url 'delete' obj.id %}">Удалить</a>
-        <a href="{% url 'update' obj.id %}">Редактировать</a>
-    </div>
+    <div class='col-md-4'>{{ obj.name }}</div>
+        <div class='col-md-3'><a href="{% url 'delete' obj.id %}" class="btn btn-default btn-lg active" role="button">Удалить</a></div>
+        <div class='col-md-3'><a href="{% url 'update' obj.id %}" class="btn btn-default btn-lg active" role="button">Редактировать</a></div>
+
 {% endfor %}

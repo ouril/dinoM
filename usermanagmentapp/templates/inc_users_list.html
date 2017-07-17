@@ -1,10 +1,10 @@
 {% for user in users %}
-    <div class='blocks'>{{ user }}
-        <button id="regb" onclick= "fill_form({{ user.id }})">
+    <div class='col-md-4'>{{ user }}</div>
+    <div class='col-md-4'> <button type="button" class="btn btn-primary" onclick= "fill_form({{ user.id }})">
             Редактировать
-        </button>
-        <a href="delete/user/{{ user.id }}" id="regitr" >
+        </button></div>
+    <div class='col-md-4'><a href="delete/user/{{ user.id }}" class="btn btn-danger active" role="button" >
             Удалить
-        </a>
-    </div>
+        </a></div>
+
 {% endfor %}

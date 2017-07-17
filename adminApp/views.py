@@ -7,13 +7,12 @@ from django.contrib import auth
 from django.shortcuts import render, HttpResponseRedirect
 
 from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 from django.contrib.auth.models import User
 from usermanagmentapp.forms import RegForm, UserChangeForm
 from dinomania.forms import NewsForm, DinoForm, BookForm, AutorForm, ResursForm
-from dinomania.models import New, Dino, Book, Autor
+from dinomania.models import New, Dino
 
 
 # доступ у админке только суперпользователю
@@ -24,37 +23,34 @@ class News_admin(ListView):
     model = New
     paginate_by = 24
 
-class Dino_admin(News_admin):    
-    model = Dino
+
     
 class New_del(DeleteView):
     model = New
     success_url = '/madmin/news/'
     template_name = 'confirm_delete.html'
 
-class Dino_del(New_del):
-    model = Dino
-    success_url = '/madmin/dino/'
+
+#def new_del(request, id):
+ #   user = get_object_or_404(New, id=id)
+  #  user.delete()
+  #  return HttpResponseRedirect('/news')
+
+
+
 
 class NewsUpdateView(UpdateView):
     model = New
-    template_name = 'admin_update.html'
+    template_name = 'admin_create.html'
     fields = ('__all__')
-    success_url = '/admin/news/'
+    success_url = '/madmin/news/'
 
-class DinoUpdateView(NewsUpdateView):
-    model = Dino
-    success_url = '/admin/dino/'
 
 class NewsCreateView(CreateView):
     model = New
     template_name = 'admin_create.html'
     fields = ('__all__')
-    success_url = '/admin/news/'
-
-class DinoCreateView(NewsUpdateView):
-    model = Dino
-    success_url = '/admin/dino/'
+    success_url = '/madmin/news/'
 
 
 def madmin_page(request):
