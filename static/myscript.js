@@ -1,7 +1,7 @@
 // Скрипт для скрытия панели с регистрацией
 $(document).ready(function () {
     $('.topic').hide();
-    $('.reg').click(function () {
+    $('#reg').click(function () {
         $('.topic').show('slow');
     });
     $('.cross').click(function () {
@@ -9,6 +9,15 @@ $(document).ready(function () {
     });
 });
 
+/*$(document).ready(function () {
+    $('.sh_desc').click(function () {
+        $('.topic').show('slow');
+    });
+    $('.cross').click(function () {
+        $('.topic').hide('slow');
+    });
+});
+*/
 // Скрипт покзывает оштбки
 function show_errors(errors) {
     for (var error_name in errors) {

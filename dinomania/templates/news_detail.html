@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+{% endblock %}
+{% block head %}
+<div class='free_pl'></div>
+<div class='topic'>
+<div class="cross">X</div>
+{% include "inc_login_form.html" %}
+</div>
+{% endblock %}
+{% block main %}
+<div class='news'>
+
+    <h1>{{object.name}}</h1>    
+    <div class='text'>{{object.time}}</div>
+    <img src='{{ object.img.url }}' width="70%" class="big-image">
+    <div class='text'>{{object.dino}}</div>
+    <div class='text'>{{object.body}}</div>
+
+</div>
+
+<div class='free_pl'></div>
+{% endblock %}

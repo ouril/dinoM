@@ -1,5 +1,6 @@
 html {
-  margin: 0px; }
+  margin: 0px; 
+  width: 100%;}
 
 body {
   display: flex;
@@ -8,17 +9,20 @@ body {
   font-family: Arial, sans-serif;
   background-image: url("dino.jpg");
   background-attachment: fixed;
-  background-size: cover; }
+  background-size: cover;
+  width: 100%; }
+
+
 
 nav, footer {
   margin: 0px;
   width: 100%;
   flex-direction: row;
   background-color: #060f14;
-  opacity: 0.98; }
+  opacity: 0.99; }
   nav ul, footer ul {
     margin: 0px;
-    height: 40px;
+    height: 60px;
     display: flex;
     justify-content: space-around; }
   nav li, footer li {
@@ -32,7 +36,7 @@ nav, footer {
       text-decoration: none;
       font-weight: bold;
       font-family: Arial, sans-serif;
-      color: #bababa; }
+      color: white; }
     nav li a:hover, footer li a:hover {
       color: white; }
   nav .home, footer .home {
@@ -48,7 +52,8 @@ header {
   header h1 {
     position: relative;
     top: 50px;
-    left: 120px;
+    left: 10%;
+    width: 60%;
     text-shadow: 5px 5px 5px black;
     font-weight: bold;
     font-size: 75px;
@@ -63,19 +68,20 @@ header {
   width: 300px;
   color: white;
   background-color: #cc5d2e;
-  opacity: 0.9; }
+  opacity: 0.87; 
+  z-index: 1000;}
 
 .contaner {
   display: flex;
   flex-direction: column;
   background-color: #060f14;
-  opacity: 0.878;
+  opacity: 0.99;
   width: 100%;
   height: 600px; }
   .contaner .blocks {
     width: 100%;
     background-color: #060f14;
-    opacity: 0.878;
+    opacity: 0.99;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -117,18 +123,21 @@ header {
   display: flex;
   flex-direction: column;
   background-color: #060f14;
-  opacity: 0.978;
-  width: 100%; }
+  opacity: 0.99;
+  width: 100%; 
+  color: white;}
   .news .new_link {
     margin: 20px;
     margin-left: 120px;
     width: 80%;
     height: 200px;
     background-color: #cc5d2e;
-    display: flex; }
-  .news img {
-    width: 200px;
-    margin: 0px; }
+    display: flex; 
+    /*background-attachment: fixed; */
+    background-size: cover;
+    background-position-y: center;
+    }
+  
 
 .free_pl {
   height: 50px;
@@ -184,4 +193,10 @@ footer {
     color: #cacbc4;
 
     font-weight: bold;/*# sourceMappingURL=stylesheet.min.css.map */
+  }
+  .big-image {
+    
+    margin: 10px;
+    margin-left: 15%;
+    border: 3px solid white;
   }

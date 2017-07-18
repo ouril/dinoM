@@ -6,17 +6,17 @@ News
 {% block head %}
 <div class='free_pl'></div>
 <div class='topic'>
-<div class="cross"><span class="glyphicon glyphicon-remove"></span>
-</div>
+<div class="cross">X</div>
 {% include "inc_login_form.html" %}
 </div>
 {% endblock %}
 {% block main %}
-{% for new in object_list %}
+{% for book in object_list %}
 <div class='news'>
-<div class='new_link' style="background-image: url('{{ new.img.url }}')">
-<div class='text'><a href = "{% url 'news_detail' new.id %}">{{new.name}}</a></div>
-<div class='text'>{{ new.name }}</div>
+<div class='new_link'>
+
+<div class='text'>{{ book.name }}</div>
+
 </div>
 </div>
 

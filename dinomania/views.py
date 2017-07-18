@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from dinomania.models import New, Dino
+from dinomania.models import New, Dino, Book
 from django.views.generic.list import ListView
-
+from django.views.generic.detail import DetailView
 
 # Create your views here.
 #def mainview(request):
@@ -20,3 +20,12 @@ class NewsView(MainView):
     template_name = "news.html"
     paginate_by = 12
 
+class BooksView(MainView):
+    model = Book
+    template_name = "books.html"
+    paginate_by = 12
+
+class NewsDetail(DetailView):
+    model = New
+    template_name = "news_detail.html"
+        
