@@ -15,11 +15,12 @@ News
 {% for new in object_list %}
 <div class='news'>
 <div class='new_link' style="background-image: url('{{ new.img.url }}')">
+
 <div class='text'><a href = "{% url 'news_detail' new.id %}">{{new.name}}</a></div>
 <div class='text'>{{ new.name }}</div>
-</div>
-</div>
 
+</div>
+</div>    
 
 {% endfor %}
 <div class='free_pl'></div>

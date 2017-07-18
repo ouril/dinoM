@@ -200,3 +200,9 @@ footer {
     margin-left: 15%;
     border: 3px solid white;
   }
+
+  .dark_fon {
+    margin: 0px;
+    background-color: black;
+    opacity: 0.1;
+  }

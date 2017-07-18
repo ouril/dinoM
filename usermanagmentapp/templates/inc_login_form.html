@@ -3,11 +3,11 @@
       <p class='errors'>Неправильный пароль или логина</p>
       {% endif %}
 
-      <form action='/user/login/' id='sing_in' method='POST'>
+      <form action='/user/login/' id='sing_in'class="input-group" style="color: black" method='POST'>
         {% csrf_token %}
         <input max='35' name='login' placeholder='login' type='text' value=''>
         <input max='35' name='password' placeholder='password' type='password' value=''>
-        <button id='log_but' type='submit'>Login</button>
+        <button class="btn btn-success" type='submit'>Login</button>
       </form>
       <a id='regitr' href="/user/registration/">registration</a>
 {% else %}
@@ -15,7 +15,7 @@
     <div class="text">{{ user.username }}</div>
     <form action='/user/logout/' id='sing_in' method='POST'>
       {% csrf_token %}
-      <button id='log_but' type='submit'>Logout</button>
+      <button class="btn btn-danger" type='submit'>Logout</button>
     </form>
 
 {% endif %}

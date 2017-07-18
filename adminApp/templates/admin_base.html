@@ -26,17 +26,12 @@
 <a class='home' href='/'>&#9749</a>
 </li>
 <li>
-<a href="{% url 'main' %}">Главная</a>
-</li>
-<li>/
-<a href="{% url 'news' %}">Новости</a>
+<a href="{% url 'mad' %}"  class="btn btn-default active" role="button" >Главная Админка</a>
 </li>
 <li>
-<a href='/'>Библиотека</a>
+<a href="{% url 'news_adm'%}"  class="btn btn-default active" role="button" >Новости Админка</a>
 </li>
-<li>
-<button class="reg" id='regb' type='submit'>регистрация</button>
-</li>
+
 
 </ul>
 </nav>
@@ -44,9 +39,6 @@
 <div class='line'>
 ADMIN PAGE
 </div>
-
- <a href="{% url 'mad' %}" class="btn btn-default btn-lg active" role="button">Пользователи</a>
- <a href="{% url 'news' %}" class="btn btn-default btn-lg active" role="button">Новости</a>
 
 
 {% block admin %}

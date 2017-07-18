@@ -31,15 +31,9 @@
 </div>
 {% for new in object_list %}
 <div class='news'>
-<div class='new_link'>
-
-<img src='{{ new.img.url }}' width="200">
-<div class='cont'>
-<div class='headi'>{{ new.name }}
-</div>
-<div class='text'>какой то там текст о том как димозавры охраняли потомство и чтото типа того...
-</div>
-</div>
+<div class='new_link' style="background-image: url('{{ new.img.url }}')">
+<div class='text'><a href = "{% url 'news_detail' new.id %}">{{new.name}}</a></div>
+<div class='text'>{{ new.name }}</div>
 </div>
 </div>
 {% endfor %}

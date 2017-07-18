@@ -9,14 +9,10 @@ $(document).ready(function () {
     });
 });
 
-/*$(document).ready(function () {
-    $('.sh_desc').click(function () {
-        $('.topic').show('slow');
-    });
-    $('.cross').click(function () {
-        $('.topic').hide('slow');
-    });
-});
+/*
+$(document).ready(function () {
+    $('.dark_fon').hover( $('.dark_fon').css(opasity=0.9), $('.dark_fon').css(opasity=0.1));
+};
 */
 // Скрипт покзывает оштбки
 function show_errors(errors) {
