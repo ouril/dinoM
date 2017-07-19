@@ -1,10 +1,13 @@
-{% for user in users %}
+{% for user in object_list %}
+<div class="row">
     <div class='col-md-4'>{{ user }}</div>
-    <div class='col-md-4'> <button type="button" class="btn btn-primary" onclick= "fill_form({{ user.id }})">
+    <div class='col-md-2'>{{ user.date_joined }}</div>
+    <div class='col-md-3'> <a role="button" class="btn btn-primary" href="get_user_form/{{ user.id }}">
             Редактировать
-        </button></div>
-    <div class='col-md-4'><a href="delete/user/{{ user.id }}" class="btn btn-danger active" role="button" >
-            Удалить
+        </a></div>
+    <div class='col-md-2'><a href="delete/user/{{ user.id }}" >
+            <span class="glyphicon glyphicon-remove">
         </a></div>
 
+</div>
 {% endfor %}

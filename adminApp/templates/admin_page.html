@@ -4,17 +4,19 @@
 {% block admin %}
 
 <div id='user_id' class='text'>
+    
 
-{% include 'inc_users_list.html' %}
+        {% include 'inc_users_list.html' %}
 
+  
 </div>
-<form  id='user_form' method="post" role="form" action="">
+<form  id='user_form' method="POST" role="form" action="">
             {% include 'inc_regform.html' %}
 
 </form>
-<button class="btn btn-success" onclick="send_data()">Изменить</button>
+<a class="btn btn-success" role="button" href="{% url 'create_us' %}">Изменить</a>
 
 
-</script>
+
 {% endblock %}
 

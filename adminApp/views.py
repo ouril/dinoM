@@ -52,7 +52,29 @@ class NewsCreateView(CreateView):
     fields = ('__all__')
     success_url = '/madmin/news/'
 
+class User_admin(ListView):
+    template_name = 'admin_page.html'
+    model = User
 
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'admin_create.html'
+    fields = ("username", "email")
+    success_url = '/madmin/'
+
+
+class UserCreateView(CreateView):
+    model = User
+    template_name = 'admin_create.html'
+    fields = ("username", "email")
+    success_url = '/madmin/'
+
+class User_del(DeleteView):
+    model = User
+    success_url = '/madmin/'
+    template_name = 'confirm_delete.html'
+
+'''
 def madmin_page(request):
     users = User.objects.all()
     user_form = RegForm()
@@ -65,12 +87,12 @@ def delete_user(request, user_id):
     user.delete()
     return HttpResponseRedirect('/madmin')
 
-
-
 def get_user_form(request, user_id):
+
     """
     Возвращает заполненную форму для редактирования Пользователя(User) с заданным user_id
     """
+    
     if request.is_ajax():
         user = get_object_or_404(User, id=user_id)
         
@@ -81,12 +103,13 @@ def get_user_form(request, user_id):
         data = {'errors': False, 'html': html}
         return JsonResponse(data)
     raise Http404
-         
 
 def create_user(request, user_id=None):
     """
+  
     Создает Пользователя(User)
     Или редактирует существующего, если указан  user_id
+
     """
     if request.is_ajax():       
         if not user_id:        
@@ -105,4 +128,4 @@ def create_user(request, user_id=None):
             return JsonResponse({'errors': errors})
 
     raise Http404
-
+'''
