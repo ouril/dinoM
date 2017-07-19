@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block title %}
-News
 {% endblock %}
 {% block head %}
 <div class='free_pl'></div>
@@ -11,16 +10,20 @@ News
 </div>
 {% endblock %}
 {% block main %}
-{% for book in object_list %}
 <div class='news'>
-<div class='new_link'>
-<img src='{{ book.foto.url }}'>
-<div class='text'><a href = "{% url 'books_detail' book.id %}">{{book.name}}</a></div>
+
+    <h1>{{object.name}}</h1>
+    <div class='text'>{{object.info}}</div>
+    <div class='text'>{{object.dino}}</div>
+    <div class='text'>{{object.autor}}</div>
+    <div class='text'>{{object.slug_name}}</div>
+    <img src='{{ object.foto.url }}' width="20%">
+
+    <div class='text'>{{object.about}}</div>
 
 </div>
-</div>
 
-
-{% endfor %}
 <div class='free_pl'></div>
 {% endblock %}
+
+

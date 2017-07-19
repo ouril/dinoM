@@ -13,10 +13,10 @@ News
 {% endblock %}
 {% block main %}
 <div class='news'>
-    <form method="get" action="{% url 'sort' %}" role="form" >
+    <form method="get" action="" role="form" >
         <input type="checkbox" name="reversed" value="True">
         <button class="btn btn-success" type='submit'>Отобразить по дате</button>
     </form>
-{% include 'inc_news.html' %}
+{% include 'inc_dino.html' %}
 <div class='free_pl'></div>
 {% endblock %}
