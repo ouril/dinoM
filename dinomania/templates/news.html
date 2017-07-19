@@ -12,6 +12,11 @@ News
 </div>
 {% endblock %}
 {% block main %}
+<div class='news'>
+    <form method="get" action="{% url 'sort' %}" role="form" >
+        <input type="checkbox" name="reversed" value="True">
+        <button class="btn btn-success" type='submit'>Отобразить по дате</button>
+    </form>
 {% for new in object_list %}
 <div class='news'>
 <div class='new_link' style="background-image: url('{{ new.img.url }}')">
