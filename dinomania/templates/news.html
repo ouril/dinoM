@@ -4,7 +4,7 @@
 News
 {% endblock %}
 {% block head %}
-<div class='free_pl'></div>
+<div class='free_pl' xmlns="http://www.w3.org/1999/html"></div>
 <div class='topic'>
 <div class="cross"><span class="glyphicon glyphicon-remove"></span>
 </div>
@@ -18,5 +18,21 @@ News
         <button class="btn btn-success" type='submit'>Отобразить по дате</button>
     </form>
 {% include 'inc_news.html' %}
+</div>
+<div class='news'>
+
+    <span>
+        {% if object_list.has_previous %}
+            <a href="?page={{news_list.previous_page_number}}">prev</a>
+        {% endif %}
+        <p>
+            {{object_list.number}}
+        </p>
+        {% if object_list.has_next %}
+        <a href="?page={{news_list.next_page_number}}">next</a>
+        {% endif %}
+
+</div>
+
 <div class='free_pl'></div>
 {% endblock %}

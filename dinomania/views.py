@@ -2,7 +2,7 @@ from django.shortcuts import render
 from dinomania.models import New, Dino, Book, SubOrder
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class MainView(ListView):
     template_name = "index.html"
@@ -13,14 +13,28 @@ class MainView(ListView):
 
 class NewsView(ListView):
     template_name = "news.html"
-    paginate_by = 12
+    paginate_by = 3
     model = New
     queryset = New.objects.all().order_by("time").reverse()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        return context
+        print(context)
 
 def sort_for_time(request):
-    context = New.objects.all().order_by("time").reverse() if request.GET.get('reversed') else New.objects.all().order_by(
-        "time")
-    return render(request, 'news.html', {"object_list": context})
+
+    context = New.objects.all().order_by("time").reverse(
+    ) if request.GET.get('reversed') else New.objects.all().order_by("time")
+
+    paginator = Paginator(context, 3)
+    page = request.GET.get('page')
+    try:
+        num_page = paginator.page(page)
+    except PageNotAnInteger:
+        num_page = paginator.page(1)
+    except PageNotAnInteger:
+        num_page = paginator.page(paginator.num_pages)
+    return render(request, 'news.html', {"object_list": num_page})
 
 
 class BooksView(ListView):
