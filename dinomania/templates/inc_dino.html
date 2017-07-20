@@ -1,3 +1,13 @@
+{% for q in sub %}
+<div class='news'>
+<div class='new_link'>
+
+<div class='text'>>{{q.name}}</div>
+
+</div>
+</div>
+{% endfor %}
+
 {% for new in object_list %}
 <div class='news'>
 <div class='new_link' style="background-image: url('{{ new.img.url }}')">

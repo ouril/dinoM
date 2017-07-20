@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from dinomania.models import New, Dino, Book
+from dinomania.models import New, Dino, Book, SubOrder
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
@@ -31,7 +31,14 @@ class BooksView(ListView):
 class DinoView(ListView):
     model = Dino
     template_name = "dino.html"
-    paginate_by = 20
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["sub"] = SubOrder.objects.all()
+        return context
+        print(context)
+
+
+
 
 class NewsDetail(DetailView):
     model = New

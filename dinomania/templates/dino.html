@@ -11,12 +11,27 @@ News
 {% include "inc_login_form.html" %}
 </div>
 {% endblock %}
+
 {% block main %}
+
+{% for q in sub %}
+ <div class='news'>
+<div class='text'>{{q.name}}</div>
+
+</div>
+</div>
+{% for new in dino_list %}
+{% if new.suborder|lower == q.name|lower %}
 <div class='news'>
-    <form method="get" action="" role="form" >
-        <input type="checkbox" name="reversed" value="True">
-        <button class="btn btn-success" type='submit'>Отобразить по дате</button>
-    </form>
-{% include 'inc_dino.html' %}
+    <p>-----------------<a href = "{% url 'dino_detail' new.id %}">{{new.name}} </a></p>
+
+</div>
+</div>
+
+{% endif %}
+{% endfor %}
+{% endfor %}
+</div>
+
 <div class='free_pl'></div>
 {% endblock %}
