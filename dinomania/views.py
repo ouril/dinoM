@@ -7,19 +7,20 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 class MainView(ListView):
     template_name = "index.html"
     model = New
-    paginate_by = 3
     queryset = New.objects.order_by("time").reverse()[:3]
 
 
 class NewsView(ListView):
     template_name = "news.html"
-    paginate_by = 3
+
     model = New
     queryset = New.objects.all().order_by("time").reverse()
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        context = super().get_context_data(**kwargs)
         return context
         print(context)
+
+    paginate_by = 3
 
 def sort_for_time(request):
 

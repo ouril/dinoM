@@ -17,21 +17,32 @@ News
         <input type="checkbox" name="reversed" value="True">
         <button class="btn btn-success" type='submit'>Отобразить по дате</button>
     </form>
-{% include 'inc_news.html' %}
+{% for new in object_list %}
+<div class='news'>
+<div class='new_link' style="background-image: url('{{ new.img.url }}')">
+
+<div class='text'><a href = "{% url 'news_detail' new.id %}">{{new.name}}</a></div>
+<div class='text'>{{ new.name }}</div>
+
 </div>
+</div>
+
+{% endfor %}
+</div>
+
 <div class='news'>
 
-    <span>
-        {% if object_list.has_previous %}
-            <a href="?page={{news_list.previous_page_number}}">prev</a>
+    <p>
+        {% if page_obj.has_previous %}
+            <a href="?page={{page_obj.previous_page_number }}">prev</a>
         {% endif %}
         <p>
-            {{object_list.number}}
+            Page {{ page_obj.number }} of {{ paginator.num_pages }}
         </p>
-        {% if object_list.has_next %}
-        <a href="?page={{news_list.next_page_number}}">next</a>
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">next</a>
         {% endif %}
-
+    </p>
 </div>
 
 <div class='free_pl'></div>

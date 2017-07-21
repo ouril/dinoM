@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dinomania',
+    'ckeditor',
+    'ckeditor_uploader',
     'usermanagmentapp',
     'adminApp'
 
@@ -122,12 +124,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = "upload/"
+#CKEDITOR_JQUERY_URL = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+#CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+#CKEDITOR_RESTRICT_BY_USER = True
+#CKEDITOR_BROWSE_SHOW_DIRS = True
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'forcePasteAsPlainText': True
+    }
+}

@@ -1,17 +1,18 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
-
 
 class New(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name='Загаловок новости')
-    slug_name = models.CharField(max_length=120, unique=True, verbose_name='Синапсис новости', blank=True, null=True)
+
     where_from = models.URLField(verbose_name='Источник',  blank=True)
     dino = models.ForeignKey('Dino', null=True)
     time = models.DateTimeField(auto_now_add=True, verbose_name='дата и время', null=True)
-    body = models.TextField(blank=True)
+    body = models.TextField(verbose_name='Синапсис новости', blank=True)
     img = models.ImageField(upload_to='test', blank=True, null=True)
-
+    content = RichTextField(blank=True, null=True)
+    content2 = RichTextUploadingField(blank=True, null=True)
     def __str__(self):
         return self.name
 
