@@ -1,12 +1,12 @@
 from django.conf.urls import url
-from dinomania.views import MainView, NewsView, BooksView, NewsDetail,sort_for_time,BooksDetail, \
-    DinoView, DinoDetail
+from dinomania.views import MainView, NewsView, BooksView, NewsDetail, BooksDetail, \
+    DinoView, DinoDetail, SortedNews
 
 urlpatterns = [
 
     url(r'^$', MainView.as_view(), name='main'),
     url(r'^news$', NewsView.as_view(), name='news'),
-    url(r'^news/sorted/$', sort_for_time, name='sort'),
+    url(r'^news/sorted/$', SortedNews.as_view(), name='sort'),
     url(r'^books/$', BooksView.as_view(), name='books'),
     url(r'^books/(?P<pk>\d+)/$', BooksDetail.as_view(), name='books_detail'),
     url(r'^dino/$', DinoView.as_view(), name='dino'),

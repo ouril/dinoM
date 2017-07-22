@@ -37,6 +37,15 @@ def sort_for_time(request):
         num_page = paginator.page(paginator.num_pages)
     return render(request, 'news.html', {"object_list": num_page})
 
+class SortedNews(ListView):
+    template_name = "news.html"
+    paginate_by = 3
+    model = New
+    def get(self, request, *args, **kwargs):
+        self.object_list = New.objects.all().order_by("time").reverse(
+        ) if request.GET.get('reversed') else New.objects.all().order_by("time")
+        context = super().get_context_data()
+        return self.render_to_response(context)
 
 class BooksView(ListView):
     model = Book

@@ -2,6 +2,16 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
+class AntiTrashMixin(object):
+    def save(self, *args, **kwargs):
+        try:
+            this_record = New.objects.get(id = self.id)
+            if this_record.img != self.img:
+                this_record.img.delete(save=False)
+        except:
+            pass
+        super(New, self).save(*args, **kwargs)
+
 
 class New(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name='Загаловок новости')
