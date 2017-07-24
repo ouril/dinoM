@@ -127,6 +127,7 @@ USE_TZ = True
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 MEDIA_URL = '/media/'
 
@@ -142,3 +143,7 @@ CKEDITOR_CONFIGS = {
         'forcePasteAsPlainText': True
     }
 }
+
+LOGIN_URL ="login_glob"
+
+LOGIN_REDIRECT_URL = "main"

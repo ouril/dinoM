@@ -17,7 +17,7 @@ from django.conf.urls import url
 from usermanagmentapp.views import login, logout, regis
 
 urlpatterns = [
-    url(r'^login/$', login),
+    url(r'^login/$', login, name='login'),
     url(r'^logout/$', logout),
     url(r'^registration/$', regis)
 ]

@@ -17,15 +17,15 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.auth.views import login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('dinomania.urls')),
     url(r'^user/', include('usermanagmentapp.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    url(r'^madmin/', include('adminApp.urls'))
-
+    url(r'^madmin/', include('adminApp.urls')),
+    url(r'^login/', login, {"template_name":"login_glob.html"}, name="login_glob")
 ]
 
 if settings.DEBUG:

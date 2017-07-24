@@ -2,6 +2,8 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
+
+
 class AntiTrashMixin(object):
     def save(self, *args, **kwargs):
         try:
@@ -13,7 +15,7 @@ class AntiTrashMixin(object):
         super(New, self).save(*args, **kwargs)
 
 
-class New(models.Model):
+
     name = models.CharField(max_length=50, unique=True, verbose_name='Загаловок новости')
 
     where_from = models.URLField(verbose_name='Источник',  blank=True)
