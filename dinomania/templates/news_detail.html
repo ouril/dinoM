@@ -19,6 +19,17 @@
     <div class='text'>{{object.body}}</div>
     <div class='text'>{{object.content|safe}}</div>
     <div class='text'>{{object.content2|safe}}</div>
+    {% for comment in comments%}
+    <div class='news_link'>{{comment.content}}</div>
+    {% endfor %}
+    {% if user.is_authenticated%}
+    <form method="post" action="{% url 'add_comment' object.pk %}" id='sing_in'class="input-group">
+        {% csrf_token %}
+    {{comment_form.as_table}}
+        <button class="btn btn-default" type="submit">Закоментить</button>
+
+    </form>
+    {% endif %}
 </div>
 
 <div class='free_pl'></div>

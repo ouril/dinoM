@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -14,7 +15,7 @@ class AntiTrashMixin(object):
             pass
         super(New, self).save(*args, **kwargs)
 
-
+class New(models.Model):
 
     name = models.CharField(max_length=50, unique=True, verbose_name='Загаловок новости')
 
@@ -87,3 +88,12 @@ class Order(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Comment(models.Model):
+
+    author_id = models.ForeignKey(User)
+    about = models.ForeignKey('New')
+    content = models.TextField(blank=True, null=True)
+    pub_date = models.DateTimeField(auto_now_add=True, verbose_name='дата и время', null=True)
+

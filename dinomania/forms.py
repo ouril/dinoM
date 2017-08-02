@@ -1,5 +1,5 @@
 from django import forms
-from .models import New, Dino, Book, Autor, Resurs
+from .models import New, Dino, Book, Autor, Comment
 
 class NewsForm(forms.ModelForm):
     class Meta:
@@ -22,7 +22,7 @@ class AutorForm(forms.ModelForm):
         fields = ('__all__')
 
 
-class ResursForm():
+class CommentForm(forms.ModelForm):
     class Meta:
-        model = Resurs
-        fields = ('__all__')
+        model = Comment
+        fields = ('content',)

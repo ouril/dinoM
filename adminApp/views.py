@@ -11,7 +11,7 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 
 from django.contrib.auth.models import User
 from usermanagmentapp.forms import RegForm, UserChangeForm
-from dinomania.forms import NewsForm, DinoForm, BookForm, AutorForm, ResursForm
+from dinomania.forms import NewsForm, DinoForm, BookForm, AutorForm
 from dinomania.models import New, Dino
 
 
