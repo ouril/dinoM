@@ -75,7 +75,7 @@ def add_comment(request, pk):
             comment.path = []
             comment.about = news
             comment.author_id = auth.get_user(request)
-            comment.content = request.POST.get('content')
+            comment.content2 = request.POST.get('content2')
             comment.save()
 
     return HttpResponseRedirect('/news/'+ pk)

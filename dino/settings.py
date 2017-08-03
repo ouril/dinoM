@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'usermanagmentapp',
-    'adminApp'
+    'adminApp',
+    'easy_thumbnails'
 
 
 ]
@@ -147,3 +148,8 @@ CKEDITOR_CONFIGS = {
 LOGIN_URL ="login_glob"
 
 LOGIN_REDIRECT_URL = "main"
+
+THUMBNAILS_BASEDIR = 'thumbnails'
+
+THUMBNAILS_DEFAULT_OPTIONS = {'size':(100, 100), 'upscale': True, 'crop':'smart'}
+

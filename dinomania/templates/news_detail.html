@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load thumbnail %}
 {% block title %}
 {% endblock %}
 {% block head %}
@@ -19,8 +20,14 @@
     <div class='text'>{{object.body}}</div>
     <div class='text'>{{object.content|safe}}</div>
     <div class='text'>{{object.content2|safe}}</div>
-    {% for comment in comments%}
-    <div class='news_link'>{{comment.content}}</div>
+    {% for comment in comments %}
+    <div class='new_link'>
+    <img src="{% thumbnail comment.author_id.profile.av 200x300 sharpen %}"/>
+    <div class='text'>{{comment.author_id.profile.user}}</div>
+    <div class='text'>{{comment.author_id}}</div>
+    <div class='text'>{{comment.pub_date}}</div>
+    <div class='text'>{{comment.content2|safe}}</div>
+    </div>
     {% endfor %}
     {% if user.is_authenticated%}
     <form method="post" action="{% url 'add_comment' object.pk %}" id='sing_in'class="input-group">
@@ -33,4 +40,6 @@
 </div>
 
 <div class='free_pl'></div>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script> 
 {% endblock %}

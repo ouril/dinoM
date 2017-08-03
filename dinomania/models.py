@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
+from easy_thumbnails.fields import ThumbnailerImageField
 # Create your models here.
 
 
@@ -95,5 +96,13 @@ class Comment(models.Model):
     author_id = models.ForeignKey(User)
     about = models.ForeignKey('New')
     content = models.TextField(blank=True, null=True)
+    content2 = RichTextField(blank=True, null=True)
     pub_date = models.DateTimeField(auto_now_add=True, verbose_name='дата и время', null=True)
+    
+
+class Profile(models.Model):
+    user = models.OneToOneField('auth.User')
+    about = RichTextField(blank=True, null=True)
+    av = ThumbnailerImageField(upload_to='photos', blank=True, null=True)
+    hobby = models.CharField(max_length=512, verbose_name='Интересы', null=True)
 
